@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #111111;
+  background: #f4f3ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f4f3ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #ff5c4d;
+  color: white;
+}
+
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f3ef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 999px;
+}
+
+
+/* Smooth image rendering */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Reusable utility */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
