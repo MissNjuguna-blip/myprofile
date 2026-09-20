@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,31 +22,34 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <a
-            href="/"
+          <Link
+            to="/"
+            onClick={closeMenu}
             className="text-xl font-semibold tracking-tight md:text-2xl"
           >
             Virginia<span className="text-[#ff5c4d]">.</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
-            <a
-              href="/"
+
+            {/* Home */}
+            <Link
+              to="/"
               className="text-sm transition-colors hover:text-[#ff5c4d]"
             >
               Home
-            </a>
+            </Link>
 
-            <a
-              href="/about"
+            {/* About */}
+            <Link
+              to="/about"
               className="text-sm transition-colors hover:text-[#ff5c4d]"
             >
               About
-            </a>
+            </Link>
 
-            
-            {/* GitHub */}
+            {/* GitHub - External Link */}
             <a
               href="https://github.com/MissNjuguna-blip"
               target="_blank"
@@ -56,7 +60,7 @@ const Navbar = () => {
               <i className="bi bi-github"></i>
             </a>
 
-            {/* LinkedIn */}
+            {/* LinkedIn - External Link */}
             <a
               href="#"
               aria-label="LinkedIn"
@@ -87,7 +91,6 @@ const Navbar = () => {
               } text-xl`}
             ></i>
           </button>
-
         </div>
 
         {/* MOBILE MENU */}
@@ -100,26 +103,30 @@ const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="mt-5 overflow-hidden rounded-2xl bg-[#111111] p-6 text-white md:hidden"
             >
-
               <div className="flex flex-col gap-6">
 
-                <a
-                  href="/"
+                {/* Home */}
+                <Link
+                  to="/"
                   onClick={closeMenu}
                   className="text-lg transition-colors hover:text-[#ff5c4d]"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
-                  href="/about"
+                {/* About */}
+                <Link
+                  to="/about"
                   onClick={closeMenu}
                   className="text-lg transition-colors hover:text-[#ff5c4d]"
                 >
                   About
-                </a>
+                </Link>
+
+                {/* Social Links */}
                 <div className="flex items-center gap-5 border-t border-white/10 pt-5">
 
+                  {/* GitHub */}
                   <a
                     href="https://github.com/MissNjuguna-blip"
                     target="_blank"
@@ -130,6 +137,7 @@ const Navbar = () => {
                     <i className="bi bi-github"></i>
                   </a>
 
+                  {/* LinkedIn */}
                   <a
                     href="#"
                     aria-label="LinkedIn"
@@ -140,13 +148,18 @@ const Navbar = () => {
 
                 </div>
 
+                {/* Let's Talk */}
                 <a
                   href="#contact"
                   onClick={closeMenu}
                   className="w-fit rounded-full bg-[#ff5c4d] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-black"
                 >
-                  <i className="bi bi-telephone-fill"></i><span className="m-2">Let's talk : 0113626210</span>
+                  <i className="bi bi-telephone-fill"></i>
+                  <span className="m-2">
+                    Let's talk : 0113626210
+                  </span>
                 </a>
+
               </div>
             </motion.div>
           )}
